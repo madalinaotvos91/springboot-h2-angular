@@ -1,7 +1,0 @@
-com\app\controllers\CertificatesController.class
-com\app\configurations\JpaConfiguration.class
-com\app\repository\CertificatesRepository.class
-com\app\Main.class
-com\app\model\CertificateType.class
-com\app\model\Certificate.class
-com\app\services\CertificateService.class
