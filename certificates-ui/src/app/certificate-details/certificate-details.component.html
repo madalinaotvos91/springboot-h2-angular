@@ -1,0 +1,94 @@
+<form #f="ngForm" (ng-submit)="submit(f.value)" *ngIf="certificate" name="certificateForm" class="form-horizontal">
+  <input type="hidden" id="id" />
+  <div class="row">
+    <div class="form-group col-md-12">
+      <label class="col-md-5 control-label">ISIN:</label>
+      <div class="col-md-3">
+        <input type="text" class="form-control input-sm" value="{{certificate.isin}}"  [(ngModel)]="certificate.isin" name="isin" placeholder="Enter isin..." required ng-minlength="3"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-12">
+      <label class="col-md-5 control-label">Market:</label>
+      <div class="col-md-3">
+        <input type="text" class="form-control input-sm" value="{{certificate.market}}" [(ngModel)]="certificate.market" name="market" placeholder="Enter market..."/>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-12">
+      <label class="col-md-5 control-label">Currency:</label>
+      <div class="col-md-3">
+        <input type="text" value="{{certificate.currency}}" [(ngModel)]="certificate.currency" name="currency" class="form-control input-sm" placeholder="Enter currency..."/>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-12">
+      <label class="col-md-5 control-label" >issuer:</label>
+      <div class="col-md-3">
+        <input type="text" value="{{certificate.issuer}}" [(ngModel)]="certificate.issuer" name="issuer" class="form-control input-sm" placeholder="Enter issuer..."/>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-12">
+      <label class="col-md-5 control-label">Issuing price:</label>
+      <div class="col-md-3">
+        <input type="number" pattern="this.onlyNumbers" value="{{certificate.issuePrice}}"  [(ngModel)]="certificate.issuePrice" name="issuePrice" class="form-control input-sm"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-12">
+      <label class="col-md-5 control-label">Current price:</label>
+      <div class="col-md-3">
+        <input type="number" pattern="this.onlyNumbers" value="{{certificate.currentPrice}}" [(ngModel)]="certificate.currentPrice" name="currPrice" class="form-control input-sm" />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-12">
+      <label class="col-md-5 control-label">certificate type:</label>
+      <div class="col-md-3">
+        <select type="text" [(ngModel)] ="certificate.certType" name="certType" class="form-control input-sm">
+          <option *ngFor="let certType of certificateTypes | keyvalue" value= {{certType.key}}> {{certType.value}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row"   *ngIf="this.certificate.certType == 1">
+      <div class="form-group col-md-12">
+        <label class="col-md-5 control-label">Barrier level:</label>
+        <div class="col-md-3">
+          <input type="number" pattern="this.onlyNumbers" value="{{certificate.barrierLevel}}" [(ngModel)]="certificate.barrierLevel" name="barrierLevel" class="form-control input-sm" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row"  *ngIf="this.certificate.certType == 2">
+      <div class="form-group col-md-12">
+        <label class="col-md-5 control-label">Participation rate:</label>
+        <div class="col-md-3">
+          <input type="number" pattern="this.onlyNumbers" value="{{certificate.participationRate}}" [(ngModel)]="certificate.participationRate" name="participationRate" class="form-control input-sm" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="form-actions">
+      <div class="form-actions">
+        <div><input type="submit" (click)="createOrUpdateCertificate()" value="Save" class="btn btn-primary btn-sm" align="center"></div>
+        <hr>
+        <div><input type="button" (click)="reset()" class="btn btn-warning btn-sm" align="center" value="Reset"/></div>
+      </div>
+    </div>
+  </div>
+  <hr>
+</form>

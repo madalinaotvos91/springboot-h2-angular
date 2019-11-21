@@ -1,0 +1,9 @@
+<div *ngIf="xmlCertificate">
+  <div  class="row" name="xmlDiv" ngDefaultControl>
+    {{xmlCertificateStr}}
+  </div>
+  <hr>
+  <div class="row">
+    <button *ngIf="xmlCertificate" (click)="download()" type="button" class="btn btn-success btn-sm custom-width">Export</button>
+  </div>
+</div>

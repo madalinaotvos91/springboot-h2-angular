@@ -1,0 +1,39 @@
+form {
+    display: inline-block;
+}
+
+.form-actions{
+    text-align:center;
+}
+
+.floatRight{
+    float:right;
+    margin-right: 18px;
+}
+
+
+.has-error{
+    color:red;
+}
+.formcontainer{
+  text-align:center;
+}
+.generic-container {
+    margin: auto;
+    width: 50%;
+    padding: 20px;
+    background-color: #EAE7E7;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 0 10px black;
+    text-align:center;
+}
+
+.panel-heading{
+    align:center;
+}
+
+.custom-width {
+    width: 80px !important;
+}
+

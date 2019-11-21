@@ -1,0 +1,28 @@
+<div class="generic-container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2 class="title">Certificate list</h2>
+    </div>
+<div class="panel-body">
+  <div class="formcontainer">
+    <table>
+      <tbody>
+      <tr>
+        <td>
+         <app-certificate-details [currentCertificate]="getSelectedCertificate()"></app-certificate-details>
+        </td>
+      <td>
+        <app-certificate-xml-details [xmlCertificateValue] ="getSelectedXmlCertificate()"></app-certificate-xml-details>
+      </td>
+    </tr>
+    </tbody>
+    </table>
+  </div>
+  </div>
+ </div>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <app-certificate-table></app-certificate-table>
+  </div>
+</div>
+</div>

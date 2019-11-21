@@ -1,0 +1,30 @@
+<div class="table-responsive">
+  <table class="table table-hover table-striped table-sortable">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>ISIN</th>
+      <th>Type</th>
+      <th>Market</th>
+      <th>Currency</th>
+      <th>Issuer</th>
+      <th>Current price</th>
+      <th>Is barrier</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let certificate of certificates | async">
+      <td>{{certificate.id}}</td>
+      <td>{{certificate.isin}}</td>
+      <td>{{certificate.typeValue}}</td>
+      <td>{{certificate.market}}</td>
+      <td>{{certificate.currency}}</td>
+      <td>{{certificate.issuer}}</td>
+      <td>{{certificate.currentPrice}}</td>
+      <td> {{certificate.barrierLevel != null && certificate.currentPrice  > certificate.barrierLevel}}</td>
+      <td><button (click)="asHtml(certificate)" type="button" class="btn btn-success btn-sm custom-width">As html</button></td>
+      <td><button (click)="asXml(certificate)" type="button" class="btn btn-danger btn-sm custom-width">As xml</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
